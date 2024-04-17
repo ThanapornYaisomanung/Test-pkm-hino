@@ -1,4 +1,4 @@
-'use client';
+' ';
 import Link from "next/link";
 import React from "react";
 import { Dashboard_icon, List_icon, Car_tag_icon, Customer_icon, Employee_icon, Database_icon } from "../icons/menus";

@@ -1,4 +1,4 @@
-"use client";
+" ";
 
 import { Inter } from "next/font/google";
 import { Kanit } from "next/font/google";

@@ -1,4 +1,4 @@
-"use client";
+" ";
 
 import { useState } from "react";
 import logo from '../../public/6f6f9279f.png';
