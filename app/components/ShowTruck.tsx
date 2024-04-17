@@ -13,7 +13,7 @@ export function ShowTruck(props: any) {
     const router = useRouter()
 
     const loadRealtime = () => {
-        const q = query(data, where("t_status", "==", "STOCK"));
+        const q = query(data, where("t_status", "==", "STOCK"), where("m_name" , "==" , "Truckname"));
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             const cities: any[] = [];
             querySnapshot.docs.map((doc) => {

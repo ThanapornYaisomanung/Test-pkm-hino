@@ -125,7 +125,11 @@ export default function Truck() {
 
     const toggleDropdown = () => {
         setIsOpen2(!isOpen2);
-        fetchData(optionS);
+        if (input === "") {
+            fetchData(optionS);
+        } else {
+            fetchData(input);
+        }
     };
 
     const handleChange = async (value: (SetStateAction<string>)) => {
@@ -137,10 +141,16 @@ export default function Truck() {
         setInput("");
         fetchData("");
         setOptionS("")
+        setIsOpen2(false);
     };
     const stateChange = (s: string) => {
         setOptionS(s);
-        fetchData(s);
+        if (input === "") {
+            fetchData(s);
+        } else {
+            fetchData(input);
+        }
+
         setIsOpen2(false);
     };
 
