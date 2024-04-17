@@ -1,4 +1,4 @@
-"use client";
+" ";
 
 import { Clock } from "../components/Clock"
 import { DashBox } from "../components/DashBox"

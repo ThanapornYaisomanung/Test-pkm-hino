@@ -1,4 +1,4 @@
-'use client';
+' ';
 import Link from "next/link";
 import React from "react";
 import { BuildOption_icon, Business_icon, Employee_icon, Garage_icon, TruckType_icon} from "../icons/menus";
