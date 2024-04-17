@@ -1,4 +1,4 @@
-" ";
+"use client";
 
 import { onSnapshot, collection } from "firebase/firestore";
 import { db } from "../firebase";

@@ -1,4 +1,4 @@
-' ';
+"use client";
 
 import Link from "next/link"
 import { Arrow_donw_icon, Arrow_up_icon, Delete_icon, Edit_icon, View_icon } from "../icons/activeIcon";
