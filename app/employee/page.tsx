@@ -1,4 +1,4 @@
-" ";
+"use client";
 import { useState, useEffect, SetStateAction } from "react";
 import Link from "next/link";
 import { collection, query, getDocs, limit, where, onSnapshot, deleteDoc, doc } from "firebase/firestore";

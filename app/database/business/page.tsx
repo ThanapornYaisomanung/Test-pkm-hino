@@ -1,4 +1,4 @@
-' ';
+"use client";
 
 import Link from "next/link"
 import { Arrow_left_icon, Delete_icon, Edit_icon, View_icon } from "@/app/icons/activeIcon";

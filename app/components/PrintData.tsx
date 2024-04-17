@@ -1,4 +1,4 @@
-' ';
+"use client";
 
 import { collection, doc, getDoc, getFirestore, deleteDoc, onSnapshot } from "firebase/firestore";
 import { db } from "@/app/firebase";

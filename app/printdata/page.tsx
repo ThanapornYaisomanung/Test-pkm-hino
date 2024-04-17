@@ -1,4 +1,4 @@
-' ';
+"use client";
 
 import { collection, doc, getDoc, getFirestore, onSnapshot, query, where } from "firebase/firestore";
 import { SetStateAction, useEffect, useState } from "react";

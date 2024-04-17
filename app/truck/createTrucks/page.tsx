@@ -1,4 +1,4 @@
-' ';
+"use client";
 
 import { useRouter } from 'next/navigation'
 import { useState, useEffect, ChangeEvent, SetStateAction } from "react";
