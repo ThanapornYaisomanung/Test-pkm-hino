@@ -37,10 +37,8 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
       const q = query(collection(db, "Employees"), where("employee_email", "==", email));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
-         
-        console.log(doc.id, " => ", doc.data().role);
-        // setUserName(doc.id);
         setRole(doc.data().role);
+        console.log(doc.id, " => ", doc.data().role);
       });
     } else {
       // User is signed out
@@ -59,7 +57,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         <title>PKM HINO</title>
       </head>
       {
-        role == "" ?
+        role === "" ?
           <body className={latin.className}>
 
 
