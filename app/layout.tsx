@@ -41,6 +41,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         console.log(doc.id, " => ", doc.data().role);
         // setUserName(doc.id);
         setRole(doc.data().role);
+        router.push("/dashboard")
       });
     } else {
       // User is signed out
