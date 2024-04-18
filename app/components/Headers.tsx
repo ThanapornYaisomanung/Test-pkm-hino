@@ -40,8 +40,9 @@ export default function Headers() {
     } else {
       // User is signed out
       // alert("sign in Error!");
-      router.push("/")
       setRole("")
+      return router.push("/")
+      
 
     }
   });
@@ -56,8 +57,8 @@ export default function Headers() {
         alert("ออกจากระบบเสร็จสิ้น")
         try {
           // Sign-out successful.
-          router.push('/')
           console.log("Signed out successfully");
+          return router.push('/')
         } catch (e) {
           console.error("Error adding document: ", e);
         }

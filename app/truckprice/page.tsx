@@ -46,8 +46,9 @@ export default function TruckPrice() {
         } else {
             // User is signed out
             // alert("sign in Error!");
-            router.push("/")
             setRole("")
+            return router.push("/")
+
 
         }
     });
@@ -242,7 +243,7 @@ export default function TruckPrice() {
 
                 </div> */}
 
-                
+
                 <div className=" py-6 flex flex-row-reverse">
                     {
                         role === "admin" ? <Link className="w-24 bg-green-500 text-white rounded-md hover:bg-green-600 h-8 text-center py-1" href='/truckprice/createTruck'>เพิ่มข้อมูล</Link>

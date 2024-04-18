@@ -31,7 +31,7 @@ export default function Customer() {
             const q = query(collection(db, "Employees"), where("employee_email", "==", email));
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach((doc) => {
-                 
+
                 // console.log(doc.id, " => ", doc.id);
                 // setUserName(doc.id);
                 setRole(doc.data().role);
@@ -39,8 +39,9 @@ export default function Customer() {
         } else {
             // User is signed out
             // alert("sign in Error!");
-            router.push("/")
             setRole("")
+            return router.push("/")
+
 
         }
     });
