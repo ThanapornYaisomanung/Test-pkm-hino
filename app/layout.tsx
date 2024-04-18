@@ -44,7 +44,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
       // User is signed out
       // alert("sign in Error!");
       setRole("")
-      router.push("/")
+      return router.push("/")
       
 
     }
