@@ -33,8 +33,9 @@ export default function ViewTruckPrice(props: any) {
         } else {
             // User is signed out
             // alert("sign in Error!");
-            router.push("/")
             setRole("")
+            return router.push("/")
+            
 
         }
     });

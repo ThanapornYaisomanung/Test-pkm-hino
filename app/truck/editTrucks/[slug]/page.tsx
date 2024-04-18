@@ -54,8 +54,9 @@ export default function EditTrucksTest(props: any) {
         } else {
             // User is signed out
             // alert("sign in Error!");
-            router.push("/")
             setRole("")
+            return router.push("/")
+            
 
         }
     });
@@ -76,7 +77,7 @@ export default function EditTrucksTest(props: any) {
     };
     const [input, setInput] = useState("");
 
-    const getData = async (DataID: string) => {
+    const getData = async () => {
         const db = getFirestore()
         const docRef = doc(db, "Truck", DataID);
         const docSnap = await getDoc(docRef);
@@ -154,7 +155,7 @@ export default function EditTrucksTest(props: any) {
         const sub = getStatus();
         return () => {
             unsubscribe();
-            getData(DataID);
+            getData();
             unsub();
             sub();
         };

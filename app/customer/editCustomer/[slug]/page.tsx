@@ -98,8 +98,9 @@ export default function EditCustomer(props: any) {
         } else {
             // User is signed out
             // alert("sign in Error!");
-            router.push("/")
             setRole("")
+            return router.push("/")
+            
 
         }
     });
