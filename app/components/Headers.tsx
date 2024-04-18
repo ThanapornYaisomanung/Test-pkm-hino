@@ -58,6 +58,7 @@ export default function Headers() {
         try {
           // Sign-out successful.
           console.log("Signed out successfully");
+          setRole("")
           return router.push('/')
         } catch (e) {
           console.error("Error adding document: ", e);

@@ -54,8 +54,11 @@ export default function Truck() {
         } else {
             // User is signed out
             // alert("sign in Error!");
-            setRole("")
-            return router.push("/")
+            if (role === "") {
+                setRole("")
+                return router.push("/")
+            }
+
 
 
 
