@@ -187,7 +187,7 @@ export default function Truck() {
         setEndDate2("");
     };
 
-    const dbView = async (id: string) => {
+    const dbView = async (id: any) => {
         console.log(id);
         router.push(`/truck/${id}`)
 

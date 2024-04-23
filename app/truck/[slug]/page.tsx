@@ -39,8 +39,8 @@ export default function ViewTruck(props: any) {
 
     const getData = async () => {
         const db = getFirestore()
-        const docRef = doc(db, "Truck", "0lQ1LiGFExcGdQQAFd3t");
-        // const docRef = doc(db, "Truck", DataID);
+        // const docRef = doc(db, "Truck", "0lQ1LiGFExcGdQQAFd3t");
+        const docRef = doc(db, "Truck", DataID);
         // await new Promise((resolve) => setTimeout(resolve, 1500));
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
