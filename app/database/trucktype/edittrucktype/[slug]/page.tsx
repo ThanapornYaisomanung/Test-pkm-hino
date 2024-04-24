@@ -35,7 +35,7 @@ export default function Edittrucktype(props: any) {
     const router = useRouter()
 
 
-    const getData = async (DataID: string) => {
+    const getData = async () => {
         const db = getFirestore()
         const docRef = doc(db, "TruckType", DataID);
         // await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -51,10 +51,8 @@ export default function Edittrucktype(props: any) {
 
     }
     useEffect(() => {
+        getData();
 
-        return () => {
-            getData(DataID);
-        };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -114,14 +112,14 @@ export default function Edittrucktype(props: any) {
         if (confirmBox == true) {
             alert("ยกเลิกการเพิ่มข้อมูลสำเร็จ")
             router.push('/database/trucktype')
-            
+
         }
     }
 
     function functionBack() {
         router.back();
     }
-  
+
 
 
 
@@ -142,53 +140,53 @@ export default function Edittrucktype(props: any) {
 
             {/* text header */}
             <div className="text header">
-            <div className='mb-6'>
+                <div className='mb-6'>
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
-                
+
                 <p className=" text-3xl font-bold">แก้ไขข้อมูลประเภทรถ</p>
                 <p className="pt-2">แก้ไขข้อมูลประเภทรถภายในระบบฐานข้อมูล</p>
             </div>
-                {/* tool ค้นหา */}
-                <div className="pt-4 ">
-                    <div className=" bg-cyan-50  w-full p-8 shadow-md rounded-2xl  ">
-                        {/* inputdata */}
-                        <div className="flex flex-wrap justify-center gap-4">
-                            <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">ชื่อประเภทรถ:</p>
-                                <input type="text"
-                                    defaultValue={items.type_t_name}
-                                    // value={nameModel}
-                                    onChange={(e) => setTypeName(e.target.value)}
-                                    className="pl-1 ring-1 ring-inset ring-gray-300 max-md:w-full"
-                                    placeholder="Search" />
+            {/* tool ค้นหา */}
+            <div className="pt-4 ">
+                <div className=" bg-cyan-50  w-full p-8 shadow-md rounded-2xl  ">
+                    {/* inputdata */}
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <div className="flex gap-4 max-md:w-full">
+                            <p className="max-w-32 md:w-32 w-full ">ชื่อประเภทรถ:</p>
+                            <input type="text"
+                                defaultValue={items.type_t_name}
+                                // value={nameModel}
+                                onChange={(e) => setTypeName(e.target.value)}
+                                className="pl-1 ring-1 ring-inset ring-gray-300 max-md:w-full"
+                                placeholder="Search" />
 
-                            </div>
+                        </div>
 
 
-                            <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">ชื่อ code:</p>
-                                <input type="text"
-                                    defaultValue={items.type_t_code}
-                                    onChange={(e) => setTypeCode(e.target.value)}
-                                    className="pl-1 ring-1 ring-inset ring-gray-300 max-md:w-full" placeholder="Search" />
-                            </div>
-
-                          
+                        <div className="flex gap-4 max-md:w-full">
+                            <p className="max-w-32 md:w-32 w-full ">ชื่อ code:</p>
+                            <input type="text"
+                                defaultValue={items.type_t_code}
+                                onChange={(e) => setTypeCode(e.target.value)}
+                                className="pl-1 ring-1 ring-inset ring-gray-300 max-md:w-full" placeholder="Search" />
                         </div>
 
 
-                        {/* ปุ่ม */}
-                        <div className="flex flex-wrap gap-8 pt-5 justify-center ">
-                            <button className=" bg-green-500 hover:bg-green-600 px-5 rounded text-white" onClick={() => functionSave()}>บันทึก</button>
-                            <button className=" bg-red-500 hover:bg-red-600 px-5 rounded text-white" onClick={() => functionCancel()} >ยกเลิก</button>
+                    </div>
 
-                        </div>
+
+                    {/* ปุ่ม */}
+                    <div className="flex flex-wrap gap-8 pt-5 justify-center ">
+                        <button className=" bg-green-500 hover:bg-green-600 px-5 rounded text-white" onClick={() => functionSave()}>บันทึก</button>
+                        <button className=" bg-red-500 hover:bg-red-600 px-5 rounded text-white" onClick={() => functionCancel()} >ยกเลิก</button>
 
                     </div>
 
                 </div>
-         
+
+            </div>
+
 
 
 

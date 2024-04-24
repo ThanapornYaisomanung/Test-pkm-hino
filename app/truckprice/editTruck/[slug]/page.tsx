@@ -17,9 +17,6 @@ import {
 import { Arrow_donw_icon, Arrow_left_icon, Arrow_up_icon } from '@/app/icons/activeIcon';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-
-
-
 let data = collection(db, "TruckType")
 
 export default function EditTruckPModel(props: any) {
@@ -54,7 +51,7 @@ export default function EditTruckPModel(props: any) {
     });
 
 
-    const getData = async (DataID: string) => {
+    const getData = async () => {
         const db = getFirestore()
         const docRef = doc(db, "TruckModel", DataID);
         // await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -87,8 +84,9 @@ export default function EditTruckPModel(props: any) {
 
     useEffect(() => {
         const unsubscribe = loadRealtime();
+        getData();
         return () => {
-            getData(DataID);
+            
             unsubscribe();
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps

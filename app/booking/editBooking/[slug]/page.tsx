@@ -272,10 +272,10 @@ export default function EditBooking(props: any) {
         const unsubbook = getBooking();
         const subGarage = getGarage();
         const subEm = getEM();
+        getData();
         return () => {
             unsubscribe();
             unsubbook();
-            getData();
             subTypeB();
             unsub();
             sub();

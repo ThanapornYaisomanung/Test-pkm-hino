@@ -7,12 +7,38 @@ import logo from '../public/6f6f9279f.png';
 import bg from '../public/Logistics-4.png';
 import { useRouter } from "next/navigation";
 import signIn from "./signin";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "./firebase";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
+  const [role, setRole] = useState("");
+  const auth = getAuth();
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      const uid = user.uid;
+      const email = user.email;
+      // console.log("This account:", uid, email);
 
-  const router = useRouter()
+      const q = query(collection(db, "Employees"), where("employee_email", "==", email));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        setRole(doc.data().role);
+        console.log(doc.id, " => ", doc.data().role);
+      });
+      return router.push("/dashboard")
+
+
+    } else {
+      // User is signed out
+      // alert("sign in Error!");
+      setRole("")
+      return router.push("/")
+    }
+  });
 
   const handleForm = async (event: any) => {
     event.preventDefault()
