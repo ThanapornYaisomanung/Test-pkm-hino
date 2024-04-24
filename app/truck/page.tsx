@@ -189,7 +189,7 @@ export default function Truck() {
 
     const dbView = async (id: any) => {
         console.log(id);
-        router.push(`/truck/${id}`)
+        router.push(`/truck/${"0lQ1LiGFExcGdQQAFd3t"}`)
 
     }
 
