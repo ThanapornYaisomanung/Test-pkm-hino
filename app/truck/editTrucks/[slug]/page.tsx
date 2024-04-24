@@ -46,7 +46,7 @@ export default function EditTrucksTest(props: any) {
             const q = query(collection(db, "Employees"), where("employee_email", "==", email));
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach((doc) => {
-                 
+
                 // console.log(doc.id, " => ", doc.id);
                 // setUserName(doc.id);
                 setRole(doc.data().role);
@@ -56,7 +56,7 @@ export default function EditTrucksTest(props: any) {
             // alert("sign in Error!");
             setRole("")
             return router.push("/")
-            
+
 
         }
     });
@@ -153,10 +153,12 @@ export default function EditTrucksTest(props: any) {
     useEffect(() => {
         const unsubscribe = loadRealtime();
         const sub = getStatus();
+        getData();
+        unsub();
         return () => {
             unsubscribe();
-            getData();
-            unsub();
+
+
             sub();
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -605,16 +607,16 @@ export default function EditTrucksTest(props: any) {
 
                     <div className='flex flex-wrap gap-4'>
                         {
-                            role === "admin" ? 
-                            <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">ราคาทุน:</p>
-                                <input type="number"
-                                    defaultValue={input == "" ? costprice : items.m_costprice}
-                                    // value={costprice}
-                                    onChange={(e) => setCostprice(e.target.value)}
-                                    className="pl-1 ring-1 ring-inset ring-gray-300 max-md:w-full" placeholder="Search" />
-                            </div> 
-                            : ""
+                            role === "admin" ?
+                                <div className="flex gap-4 max-md:w-full">
+                                    <p className="max-w-32 md:w-32 w-full ">ราคาทุน:</p>
+                                    <input type="number"
+                                        defaultValue={input == "" ? costprice : items.m_costprice}
+                                        // value={costprice}
+                                        onChange={(e) => setCostprice(e.target.value)}
+                                        className="pl-1 ring-1 ring-inset ring-gray-300 max-md:w-full" placeholder="Search" />
+                                </div>
+                                : ""
                         }
 
 
