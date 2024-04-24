@@ -14,6 +14,8 @@ let data = collection(db, "Truck")
 
 export default function ViewTruck(props: any) {
     const DataID = props.params.slug;
+    console.log("id:",DataID);
+    
     const [items, setItems] = useState<any>([]);
     const router = useRouter()
     const [role, setRole] = useState("");
@@ -55,10 +57,10 @@ export default function ViewTruck(props: any) {
     }
 
     useEffect(() => {
-
-        return () => {
-            getData();
-        };
+getData();
+        // return () => {
+            
+        // };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
