@@ -25,7 +25,7 @@ export default function ViewTruckType(props: any) {
             const q = query(collection(db, "Employees"), where("employee_email", "==", email));
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach((doc) => {
-                 
+
                 // console.log(doc.id, " => ", doc.id);
                 // setUserName(doc.id);
                 setRole(doc.data().role);
@@ -35,13 +35,13 @@ export default function ViewTruckType(props: any) {
             // alert("sign in Error!");
             setRole("")
             return router.push("/")
-            
+
 
         }
     });
 
 
-    const getData = async (DataID: string) => {
+    const getData = async () => {
         const db = getFirestore()
         const docRef = doc(db, "TruckType", DataID);
         // await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -58,10 +58,8 @@ export default function ViewTruckType(props: any) {
     }
 
     useEffect(() => {
+        getData();
 
-        return () => {
-            getData(DataID);
-        };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

@@ -8,7 +8,7 @@ import Loading from '@/app/components/Loading';
 import { Arrow_left_icon, Delete_icon, Edit_icon } from '@/app/icons/activeIcon';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-let data = collection(db, "Business")
+let data = collection(db, "Equipment")
 
 export default function ViewGarage(props: any) {
     const DataID = props.params.slug;
@@ -43,7 +43,7 @@ export default function ViewGarage(props: any) {
 
     const getData = async () => {
         const db = getFirestore()
-        const docRef = doc(db, "Business", DataID);
+        const docRef = doc(db, "Equipment", DataID);
         // await new Promise((resolve) => setTimeout(resolve, 1500));
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
@@ -64,12 +64,10 @@ export default function ViewGarage(props: any) {
     }, []);
 
     // ปุ่ม
-    // แก้ไขข้อมูล
     const dbEdit = async (id: string) => {
         console.log(id);
-        router.push(`/database/business/editBusiness/${id}`)
+        router.push(`/database/equipment/editEquipment/${id}`)
     }
-
     // ลบข้อมูล
     const handleDelete = async (id: any) => {
         const confirmBox = window.confirm(
@@ -80,7 +78,7 @@ export default function ViewGarage(props: any) {
             alert("ลบข้อมูลสำเร็จ")
             try {
                 await deleteDoc(doc(data, id));
-                router.push('/database/business')
+                router.push('/database/equipment')
 
             } catch (e) {
                 console.error("Error adding document: ", e);
@@ -94,7 +92,7 @@ export default function ViewGarage(props: any) {
         router.back();
     }
 
-    if (!items.b_name) {
+    if (!items.et_name) {
         return (
             <div className=' h-screen'>
                 <div role="status" className="absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2 ">
@@ -115,8 +113,8 @@ export default function ViewGarage(props: any) {
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">รายละเอียดประเภทธุรกิจ</p>
-                <p className="pt-2">รายละเอียดประเภทธุรกิจภายในระบบฐานข้อมูล</p>
+                <p className=" text-3xl font-bold">รายละเอียดข้อมูลอุปกรณ์</p>
+                <p className="pt-2">รายละเอียดข้อมูลอุปกรณ์ภายในระบบฐานข้อมูล</p>
             </div>
             {/* tool ค้นหา */}
             <div className="pt-4 ">
@@ -124,10 +122,27 @@ export default function ViewGarage(props: any) {
                     {/* inputdata */}
                     <div className="flex justify-center gap-4">
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่อประเภทธุรกิจ:</p>
-                            <p>{items.b_name}</p>
+                            <p className="max-w-32 md:w-32 w-full ">ชื่ออุปกรณ์:</p>
+                            <p>{items.et_name}</p>
 
                         </div>
+                        <div className="flex gap-4 max-md:w-full">
+                            <p className="max-w-32 md:w-36 w-full">ลักษณะ:</p>
+                            <div className="flex gap-4 max-md:w-full flex-col w-full">
+                                {items.et_option?.map((o: {
+                                    eType: "",
+                                    id: ""
+                                }, key: number) =>
+                                    <div key={key} className="flex flex-col gap-4 px-2 rounded max-md:w-full">
+                                        <p className=" max-md:w-full md:w-[199.2px] truncate ">{o.eType}</p>
+                                    </div>
+                                )}
+                            </div>
+
+
+                        </div>
+
+
 
 
                     </div>
@@ -138,7 +153,6 @@ export default function ViewGarage(props: any) {
                         role === "admin" ? <div className="flex flex-wrap gap-8 pt-5 justify-center ">
                             <button className="flex justify-between rounded-md text-center text-white bg-amber-500 hover:bg-amber-600 p-2 max-w-20 w-full text-sm" onClick={() => dbEdit(DataID)} ><Edit_icon color="#fff" /> แก้ไข</button>
                             <button className="flex justify-between rounded-md text-center text-white bg-red-500 hover:bg-red-600 max-xl:hidden p-2 max-w-20 w-full text-sm" onClick={() => handleDelete(DataID)} ><Delete_icon color="#fff" /> ลบ</button>
-
                         </div> : ""
                     }
 

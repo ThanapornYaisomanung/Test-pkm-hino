@@ -24,7 +24,7 @@ export default function EditBusiness(props: any) {
     const router = useRouter()
 
 
-    const getData = async (DataID: string) => {
+    const getData = async () => {
         const db = getFirestore()
         const docRef = doc(db, "Business", DataID);
         const docSnap = await getDoc(docRef);
@@ -40,10 +40,8 @@ export default function EditBusiness(props: any) {
 
     }
     useEffect(() => {
+        getData();
 
-        return () => {
-            getData(DataID);
-        };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

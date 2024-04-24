@@ -32,7 +32,7 @@ export default function CreateEmployee(props: any) {
 
 
 
-    const getData = async (DataID: string) => {
+    const getData = async () => {
         const db = getFirestore()
         const docRef = doc(db, "Employees", DataID);
         // await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -49,10 +49,8 @@ export default function CreateEmployee(props: any) {
     }
 
     useEffect(() => {
+        getData();
 
-        return () => {
-            getData(DataID);
-        };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

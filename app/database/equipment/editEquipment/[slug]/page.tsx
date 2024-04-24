@@ -24,7 +24,7 @@ export default function EditEquipment(props: any) {
     const router = useRouter()
 
 
-    const getData = async (DataID: string) => {
+    const getData = async () => {
         const db = getFirestore()
         const docRef = doc(db, "Equipment", DataID);
         const docSnap = await getDoc(docRef);
@@ -39,10 +39,8 @@ export default function EditEquipment(props: any) {
 
     }
     useEffect(() => {
+        getData();
 
-        return () => {
-            getData(DataID);
-        };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -117,7 +115,7 @@ export default function EditEquipment(props: any) {
                         et_option: items.et_option,
                     });
                     console.log("eiei");
-                    
+
                 }
 
 
@@ -193,8 +191,8 @@ export default function EditEquipment(props: any) {
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">แก้ไขข้อมูลอู่รถ</p>
-                <p className="pt-2">แก้ไขข้อมูลอู่รถภายในระบบฐานข้อมูล</p>
+                <p className=" text-3xl font-bold">แก้ไขข้อมูลอุปกรณ์</p>
+                <p className="pt-2">แก้ไขข้อมูลอุปกรณ์ภายในระบบฐานข้อมูล</p>
             </div>
             {/* tool ค้นหา */}
             <div className="pt-4 ">
@@ -203,7 +201,7 @@ export default function EditEquipment(props: any) {
                     <div className="flex flex-wrap justify-center gap-4">
                         <div>
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">ชื่ออู่รถ:</p>
+                                <p className="max-w-32 md:w-32 w-full ">ชื่ออุปกรณ์:</p>
                                 <input type="text"
                                     defaultValue={items.et_name}
                                     onChange={(e) => setEtName(e.target.value)}

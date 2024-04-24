@@ -241,12 +241,13 @@ export default function Headers() {
                   </a>
                 </li>
                 <li>
-                  <button
+                  <a
                     onClick={handleLogout}
                     className="block py-2 px-3  text-gray-900 rounded hover:bg-gray-200  "
+                    aria-current="page"
                   >
                     Log out
-                  </button>
+                  </a>
                 </li>
               </ul>
             </div>
