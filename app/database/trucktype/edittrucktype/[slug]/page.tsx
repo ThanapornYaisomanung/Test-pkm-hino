@@ -144,7 +144,7 @@ export default function Edittrucktype(props: any) {
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">แก้ไขข้อมูลประเภทรถ</p>
+                <p className="text-2xl md:text-3xl font-bold">แก้ไขข้อมูลประเภทรถ</p>
                 <p className="pt-2">แก้ไขข้อมูลประเภทรถภายในระบบฐานข้อมูล</p>
             </div>
             {/* tool ค้นหา */}
@@ -153,7 +153,7 @@ export default function Edittrucktype(props: any) {
                     {/* inputdata */}
                     <div className="flex flex-wrap justify-center gap-4">
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่อประเภทรถ:</p>
+                            <p className="max-w-32 md:w-32 w-full font-bold">ชื่อประเภทรถ:</p>
                             <input type="text"
                                 defaultValue={items.type_t_name}
                                 // value={nameModel}
@@ -165,7 +165,7 @@ export default function Edittrucktype(props: any) {
 
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่อ code:</p>
+                            <p className="max-w-32 md:w-32 w-full font-bold">ชื่อ code:</p>
                             <input type="text"
                                 defaultValue={items.type_t_code}
                                 onChange={(e) => setTypeCode(e.target.value)}

@@ -191,7 +191,7 @@ export default function EditEquipment(props: any) {
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">แก้ไขข้อมูลอุปกรณ์</p>
+                <p className="text-2xl md:text-3xl font-bold">แก้ไขข้อมูลอุปกรณ์</p>
                 <p className="pt-2">แก้ไขข้อมูลอุปกรณ์ภายในระบบฐานข้อมูล</p>
             </div>
             {/* tool ค้นหา */}
@@ -201,7 +201,7 @@ export default function EditEquipment(props: any) {
                     <div className="flex flex-wrap justify-center gap-4">
                         <div>
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">ชื่ออุปกรณ์:</p>
+                                <p className="max-w-32 md:w-32 w-full  font-bold">ชื่ออุปกรณ์:</p>
                                 <input type="text"
                                     defaultValue={items.et_name}
                                     onChange={(e) => setEtName(e.target.value)}
@@ -215,7 +215,7 @@ export default function EditEquipment(props: any) {
                         <div className="flex flex-col gap-4">
                             <div className='flex md:gap-4 max-md:w-full'>
                                 <div className='flex gap-4 max-md:w-full'>
-                                    <p className="max-w-32 md:w-32 w-full ">เพิ่มลักษณะ:</p>
+                                    <p className="max-w-32 md:w-32 w-full  font-bold">เพิ่มลักษณะ:</p>
                                     <input
                                         type="text"
                                         placeholder="Task..."
@@ -228,7 +228,7 @@ export default function EditEquipment(props: any) {
 
                                 <button className='bg-green-500 hover:bg-green-600 px-5 rounded text-white' onClick={addTask}>เพิ่ม</button>
                             </div>
-                            <p className="max-w-32 md:w-32 w-full ">ลักษณะอุปกรณ์:</p>
+                            <p className="max-w-32 md:w-32 w-full  font-bold">ลักษณะอุปกรณ์:</p>
                             <div className='flex flex-col gap-4 w-full '>
 
                                 {items.et_option?.map((o: {

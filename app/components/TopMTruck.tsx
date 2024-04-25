@@ -54,7 +54,7 @@ export function TopMTruck(props: any) {
 
     const options = {
         title: "Top 5 รุ่นรถ",
-        width: 600,
+        maxWidth: 600,
         height: 400,
         bar: { groupWidth: "95%" },
         legend: { position: "none" },

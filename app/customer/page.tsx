@@ -160,7 +160,7 @@ export default function Customer() {
         <div className="md:pt-8 md:pl-8 p-4 max-w-[1680px] w-full min-h-screen ">
             {/* text header */}
             <div className="text header">
-                <p className=" text-3xl font-bold">ข้อมูลลูกค้า</p>
+                <p className=" text-2xl md:text-3xl font-bold">ข้อมูลลูกค้า</p>
             </div>
 
             {/* tool ค้นหา */}
@@ -200,10 +200,10 @@ export default function Customer() {
                         <tr >
 
                             <th className="">ชื่อลูกค้า</th>
-                            <th className=" max-md:hidden">เบอร์โทรติดต่อ</th>
-                            <th className="max-md:hidden">วันที่จอง</th>
-                            <th className="">ใบกำกับภาษีขาย</th>
-                            <th className="">ชื่อรุ่นรถ</th>
+                            <th className=" ">เบอร์โทรติดต่อ</th>
+                            <th className=" max-md:hidden">วันที่จอง</th>
+                            <th className="max-md:hidden">ใบกำกับภาษีขาย</th>
+                            <th className="max-md:hidden">ชื่อรุ่นรถ</th>
                             <th className="">Action</th>
                         </tr>
                     </thead>
@@ -221,7 +221,7 @@ export default function Customer() {
                             }) => (
                                 <tr key={u.id} className="">
                                     <td className="">{u.b_cusName}</td>
-                                    <td className="text-center max-md:hidden">{u.b_cusTel}</td>
+                                    <td className="text-center ">{u.b_cusTel}</td>
                                     <td className="text-center max-md:hidden">{u.b_dateBooking}</td>
                                     <td className="text-center max-md:hidden">{u.b_salesTax}</td>
                                     <td className="text-center max-md:hidden">{u.b_Mname}</td>
@@ -243,7 +243,7 @@ export default function Customer() {
                             }) => (
                                 <tr key={u.id} className="">
                                     <td className="">{u.b_cusName}</td>
-                                    <td className="text-center max-md:hidden">{u.b_cusTel}</td>
+                                    <td className="text-center ">{u.b_cusTel}</td>
                                     <td className="text-center max-md:hidden">{u.b_dateBooking}</td>
                                     <td className="text-center max-md:hidden">{u.b_salesTax}</td>
                                     <td className="text-center max-md:hidden">{u.b_Mname}</td>

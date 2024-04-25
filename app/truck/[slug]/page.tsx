@@ -145,7 +145,7 @@ export default function ViewTruck(props: any) {
                         <div className='flex flex-wrap gap-4 col-span-2'>
                             <div className="flex gap-4 max-md:w-full">
                                 <p className="max-w-32 md:w-32 w-full font-semibold">ชื่อรุ่นรถ:</p>
-                                <p className='min-w-[199.2px] '>{items.m_name}</p>
+                                <p className='min-w-[199.2px] '>{items.m_name} </p>
 
                             </div>
 

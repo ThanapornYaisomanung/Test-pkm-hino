@@ -142,7 +142,7 @@ export default function EditBusiness(props: any) {
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">แก้ไขข้อมูลประเภทธุรกิจ</p>
+                <p className="text-2xl md:text-3xl font-bold">แก้ไขข้อมูลประเภทธุรกิจ</p>
                 <p className="pt-2">แก้ไขข้อมูลประเภทธุรกิจภายในระบบฐานข้อมูล</p>
             </div>
             {/* tool ค้นหา */}
@@ -152,7 +152,7 @@ export default function EditBusiness(props: any) {
                     <div className="flex flex-wrap justify-center gap-4">
                         <div>
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">ชื่อประเภทธุรกิจ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ชื่อประเภทธุรกิจ:</p>
                                 <input type="text"
                                     defaultValue={items.b_name}
                                     onChange={(e) => setBName(e.target.value)}

@@ -53,7 +53,7 @@ export function TopEM(props: any) {
 
     const options = {
         title: "Top 5 อุปกรณ์",
-        width: 600,
+        maxWidth: 600,
         height: 400,
         bar: { groupWidth: "95%" },
         legend: { position: "none" },

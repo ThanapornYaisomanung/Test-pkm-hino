@@ -811,7 +811,7 @@ export default function EditBooking(props: any) {
                         <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                     </div>
 
-                    <p className=" text-3xl font-bold">จองรถ</p>
+                    <p className="text-2xl md:text-3xl font-bold">จองรถ</p>
                     <p className="pt-2">เพิ่มข้อมูลการจองรถภายในระบบฐานข้อมูล</p>
                 </div>
 
@@ -825,7 +825,7 @@ export default function EditBooking(props: any) {
                         {/* inputdata */}
                         <div className="flex flex-wrap gap-4">
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">วันที่ตัดบัญชี:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">วันที่ตัดบัญชี:</p>
                                 <DatePicker
                                     selected={deductionDate}
                                     selectsStart
@@ -842,7 +842,7 @@ export default function EditBooking(props: any) {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">INV.:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">INV.:</p>
                                 <input type="text"
                                     defaultValue={items.t_inv_num}
                                     onChange={(e) => setInvNum(e.target.value)}
@@ -852,7 +852,7 @@ export default function EditBooking(props: any) {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">ใบกำกับภาษีสินค้า:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ใบกำกับภาษีสินค้า:</p>
                                 <input type="text"
                                     defaultValue={items.t_product_tax}
                                     onChange={(e) => setProductTax(e.target.value)}
@@ -863,7 +863,7 @@ export default function EditBooking(props: any) {
 
                             {/* seach to input value */}
                             <div className="flex gap-4 max-md:w-full" >
-                                <p className="max-w-32 md:w-32 w-full ">รุ่นรถ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">รุ่นรถ:</p>
                                 <div className='flex flex-col'>
 
                                     <input
@@ -902,7 +902,7 @@ export default function EditBooking(props: any) {
 
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">แรงม้า:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">แรงม้า:</p>
 
 
 
@@ -915,7 +915,7 @@ export default function EditBooking(props: any) {
 
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">ความยาวรถ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ความยาวรถ:</p>
                                 <input type="text"
                                     value={length}
                                     onChange={(e) => setLength(e.target.value)}
@@ -923,7 +923,7 @@ export default function EditBooking(props: any) {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">หมายเลขเครื่อง:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">หมายเลขเครื่อง:</p>
                                 <input type="text"
                                     defaultValue={items.t_serial_num}
                                     onChange={(e) => setSerialNum(e.target.value)}
@@ -933,7 +933,7 @@ export default function EditBooking(props: any) {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">หมายเลขคัสซี:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">หมายเลขคัสซี:</p>
                                 <input type="text"
                                     defaultValue={items.t_chassis}
                                     onChange={(e) => setChassis(e.target.value)}
@@ -942,7 +942,7 @@ export default function EditBooking(props: any) {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">ที่จอดรถ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ที่จอดรถ:</p>
                                 <input type="text"
                                     defaultValue={items.t_parking}
                                     onChange={(e) => setParking(e.target.value)}
@@ -951,7 +951,7 @@ export default function EditBooking(props: any) {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">สถานะ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">สถานะ:</p>
 
                                 <div className="relative md:w-[199.2px] w-full">
                                     <button
@@ -1002,7 +1002,7 @@ export default function EditBooking(props: any) {
                             {
                                 role === "admin" ?
                                     <div className="flex gap-4 max-md:w-full">
-                                        <p className="max-w-32 md:w-32 w-full ">ราคาทุน:</p>
+                                        <p className="max-w-32 md:w-32 w-full font-bold">ราคาทุน:</p>
                                         <input type="number"
                                             defaultValue={input == "" ? costprice : items.m_costprice}
                                             // value={costprice}
@@ -1013,7 +1013,7 @@ export default function EditBooking(props: any) {
 
 
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">LP:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">LP:</p>
                                 <input type="number"
                                     defaultValue={input == "" ? lp : items.m_lp}
                                     // value={lp}
@@ -1022,7 +1022,7 @@ export default function EditBooking(props: any) {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">IRP:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">IRP:</p>
                                 <input type="text"
                                     defaultValue={input == "" ? irp : items.m_irp}
                                     // value={irp}
@@ -1032,7 +1032,7 @@ export default function EditBooking(props: any) {
 
 
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">Code ราคา:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">Code ราคา:</p>
                                 <input type="text"
                                     defaultValue={input == "" ? codeprice : items.m_codeprice}
                                     onChange={(e) => setCodeprice(e.target.value)}
@@ -1040,7 +1040,7 @@ export default function EditBooking(props: any) {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">ราคาขายจริง:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ราคาขายจริง:</p>
                                 <input type="number"
                                     value={realPrice}
                                     name='realPrice'
@@ -1049,7 +1049,7 @@ export default function EditBooking(props: any) {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">ราคาอุปกรณ์:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ราคาอุปกรณ์:</p>
                                 <input type="number"
                                     value={emPrice}
                                     name='emPrice'
@@ -1058,7 +1058,7 @@ export default function EditBooking(props: any) {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">ใบกำกับภาษีขาย:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ใบกำกับภาษีขาย:</p>
                                 <input type="text"
                                     defaultValue={salesTax}
                                     onChange={(e) => setSalesTax(e.target.value)}
@@ -1076,7 +1076,7 @@ export default function EditBooking(props: any) {
                         <div className='flex flex-wrap gap-4'>
                             <div className='flex flex-wrap gap-4'>
                                 <div className="flex gap-4 max-md:w-full">
-                                    <p className="max-w-32 md:w-32 w-full ">ราคารถ + อุปกรณ์:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">ราคารถ + อุปกรณ์:</p>
 
                                     <input
                                         type='number'
@@ -1090,7 +1090,7 @@ export default function EditBooking(props: any) {
 
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">เปอร์เซ็นต์:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">เปอร์เซ็นต์:</p>
 
                                 <div className="relative md:w-[199.2px] w-full">
                                     <button
@@ -1129,7 +1129,7 @@ export default function EditBooking(props: any) {
                             <div className='flex flex-wrap gap-4'>
                                 <div className="flex gap-4 max-md:w-full">
 
-                                    <p className="max-w-32 md:w-32 w-full ">เงินดาวน์</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">เงินดาวน์</p>
                                     <input
                                         disabled
                                         value={realPrice === 0 ? 0 : sumPrice === 0 ? ((+realPrice) * percent / 100) : ((+sumPrice) * +percent / 100)}
@@ -1144,7 +1144,7 @@ export default function EditBooking(props: any) {
 
                             <div className='flex flex-wrap gap-4'>
                                 <div className="flex gap-4 max-md:w-full">
-                                    <p className="max-w-32 md:w-32 w-full ">ยอดจัดไฟแนนซ์:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">ยอดจัดไฟแนนซ์:</p>
                                     <input type="number"
 
                                         // value={realPrice === 0 ? 0 : sumPrice === 0 ? ((+realPrice) - (((+emPrice) + (+realPrice)) * percent / 100)) : (+emPrice) + (+realPrice) - (((+emPrice) + (+realPrice)) * percent / 100)}
@@ -1164,7 +1164,7 @@ export default function EditBooking(props: any) {
 
                         <div className='flex flex-wrap gap-4'>
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">ชื่อ-นามสกุลผู้จอง:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ชื่อ-นามสกุลผู้จอง:</p>
                                 <input type="text"
                                     defaultValue={cusName}
                                     onChange={(e) => setCusName(e.target.value)}
@@ -1172,7 +1172,7 @@ export default function EditBooking(props: any) {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full z-20" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">ประเภทธุรกิจ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ประเภทธุรกิจ:</p>
 
                                 <div className="relative md:w-[199.2px] w-full">
                                     <button
@@ -1211,7 +1211,7 @@ export default function EditBooking(props: any) {
 
 
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">เบอร์โทรติดต่อ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">เบอร์โทรติดต่อ:</p>
                                 <input type="text"
                                     defaultValue={cusTel}
 
@@ -1220,7 +1220,7 @@ export default function EditBooking(props: any) {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full z-10">
-                                <p className="max-w-32 md:w-32 w-full ">วันที่จอง:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">วันที่จอง:</p>
                                 <DatePicker
                                     selected={dateBooking}
                                     selectsStart
@@ -1236,7 +1236,7 @@ export default function EditBooking(props: any) {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">เซลล์ผู้ขาย:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">เซลล์ผู้ขาย:</p>
                                 <input type="text"
                                     // value={saleName}
                                     defaultValue={saleName}
@@ -1246,7 +1246,7 @@ export default function EditBooking(props: any) {
 
 
                             <div className="flex gap-4 max-md:w-full z-10" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">อู่แต่งรถ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">อู่แต่งรถ:</p>
 
                                 <div className="relative md:w-[199.2px] w-full">
                                     <button
@@ -1286,7 +1286,7 @@ export default function EditBooking(props: any) {
 
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">อุปกรณ์แต่งรถ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">อุปกรณ์แต่งรถ:</p>
 
                                 <div className="relative md:w-[199.2px] w-full">
                                     <button
@@ -1327,7 +1327,7 @@ export default function EditBooking(props: any) {
 
                             {emType.length != 0 ?
                                 <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                    <p className="max-w-32 md:w-32 w-full ">อุปกรณ์แต่งรถ:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">อุปกรณ์แต่งรถ:</p>
 
                                     <div className="relative md:w-[199.2px] w-full">
                                         <button
@@ -1370,7 +1370,7 @@ export default function EditBooking(props: any) {
                             }
 
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">หมายเหตุ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">หมายเหตุ:</p>
                                 <textarea
                                     defaultValue={note}
                                     onChange={(e) => setNote(e.target.value)}

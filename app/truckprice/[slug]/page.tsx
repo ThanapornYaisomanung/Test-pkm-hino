@@ -119,7 +119,7 @@ export default function TruckPModel(props: any) {
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">รายละเอียดข้อมูลประเภทรถ</p>
+                <p className="text-2xl md:text-3xl font-bold">รายละเอียดข้อมูลประเภทรถ</p>
                 <p className="pt-2">รายละเอียดข้อมูลประเภทรถภายในระบบฐานข้อมูล</p>
             </div>
             {/* tool ค้นหา */}

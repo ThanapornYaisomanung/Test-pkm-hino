@@ -117,7 +117,7 @@ export default function ViewTruckPrice(props: any) {
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">รายละเอียดข้อมูลประเภทรถ</p>
+                <p className="text-2xl md:text-3xl font-bold">รายละเอียดข้อมูลประเภทรถ</p>
                 <p className="pt-2">รายละเอียดข้อมูลประเภทรถภายในระบบฐานข้อมูล</p>
             </div>
             {/* tool ค้นหา */}
@@ -126,14 +126,14 @@ export default function ViewTruckPrice(props: any) {
                     {/* inputdata */}
                     <div className="flex flex-wrap justify-center gap-4">
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่อรุ่นรถ:</p>
+                            <p className="max-w-32 md:w-32 w-full font-bold">ชื่อรุ่นรถ:</p>
                             <p>{items.m_name}</p>
 
                         </div>
 
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่อ code:</p>
+                            <p className="max-w-32 md:w-32 w-full font-bold">ชื่อ code:</p>
                             <p>{items.m_type}</p>
                         </div>
 

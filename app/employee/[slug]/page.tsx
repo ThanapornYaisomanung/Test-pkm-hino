@@ -115,33 +115,33 @@ export default function ViewEmployees(props: any) {
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">รายละเอียดข้อมูลพนักงาน</p>
+                <p className="text-2xl md:text-3xl font-bold">รายละเอียดข้อมูลพนักงาน</p>
                 <p className="pt-2">รายละเอียดข้อมูลพนักงานภายในระบบฐานข้อมูล</p>
             </div>
             {/* tool ค้นหา */}
             <div className="pt-4 ">
                 <div className=" bg-cyan-50  w-full p-8 shadow-md rounded-2xl  ">
                     {/* inputdata */}
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <div className=" gap-4">
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่อจริง:</p>
+                            <p className="max-w-24 md:w-32 w-full font-bold">ชื่อจริง:</p>
                             <p>{items.employee_nametitle}{items.employee_fname}  {items.employee_lname}</p>
 
                         </div>
 
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่อเล่น:</p>
+                            <p className="max-w-24 md:w-32 w-full font-bold">ชื่อเล่น:</p>
                             <p>{items.employee_nickname}</p>
                         </div>
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">อีเมล:</p>
+                            <p className="max-w-24 md:w-32 w-full font-bold">อีเมล:</p>
                             <p>{items.employee_email}</p>
                         </div>
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">เบอร์โทร:</p>
+                            <p className="max-w-24 md:w-32 w-full font-bold">เบอร์โทร:</p>
                             <p>{items.employee_tel}</p>
                         </div>
 

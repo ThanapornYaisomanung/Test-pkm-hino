@@ -115,7 +115,7 @@ export default function ViewGarage(props: any) {
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">รายละเอียดประเภทธุรกิจ</p>
+                <p className="text-2xl md:text-3xl font-bold">รายละเอียดประเภทธุรกิจ</p>
                 <p className="pt-2">รายละเอียดประเภทธุรกิจภายในระบบฐานข้อมูล</p>
             </div>
             {/* tool ค้นหา */}
@@ -124,7 +124,7 @@ export default function ViewGarage(props: any) {
                     {/* inputdata */}
                     <div className="flex justify-center gap-4">
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่อประเภทธุรกิจ:</p>
+                            <p className="max-w-32 md:w-32 w-full font-bold">ชื่อประเภทธุรกิจ:</p>
                             <p>{items.b_name}</p>
 
                         </div>
