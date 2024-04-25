@@ -392,7 +392,7 @@ export default function EditTruckPModel(props: any) {
                     <div className='mb-6'>
                         <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                     </div>
-                    <p className=" text-3xl font-bold">แก้ไขข้อมูล</p>
+                    <p className="text-2xl md:text-3xl font-bold">แก้ไขข้อมูล</p>
                     <p className="pt-2">แก้ไขข้อมูลรถภายในระบบฐานข้อมูล</p>
                 </div>
                 <Suspense fallback={'Loading..'}>
@@ -408,7 +408,7 @@ export default function EditTruckPModel(props: any) {
                             <div className="flex flex-wrap gap-4">
 
                                 <div className="flex gap-4 max-md:w-full">
-                                    <p className="max-w-32 md:w-32 w-full ">ชื่อรุ่นรถ:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">ชื่อรุ่นรถ:</p>
                                     <input type="text"
                                         defaultValue={items.m_name}
                                         // value={nameModel}
@@ -419,7 +419,7 @@ export default function EditTruckPModel(props: any) {
                                 </div>
 
                                 <div className="flex gap-4 max-md:w-full">
-                                    <p className="max-w-32 md:w-32 w-full ">ประเภทรถ:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">ประเภทรถ:</p>
 
                                     <div className="relative md:w-[199.2px] w-full">
                                         <button
@@ -456,7 +456,7 @@ export default function EditTruckPModel(props: any) {
                                 </div>
 
                                 <div className="flex gap-4 max-md:w-full">
-                                    <p className="max-w-32 md:w-32 w-full ">แรงม้า:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">แรงม้า:</p>
                                     <input type="text"
                                         defaultValue={items.m_ps}
                                         onChange={(e) => setPs(e.target.value)}
@@ -465,7 +465,7 @@ export default function EditTruckPModel(props: any) {
 
 
                                 <div className="flex gap-4 max-md:w-full">
-                                    <p className="max-w-32 md:w-32 w-full ">ความยาวรถ:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">ความยาวรถ:</p>
                                     <input type="text"
                                         defaultValue={items.m_length}
                                         onChange={(e) => setLength(e.target.value)}
@@ -473,7 +473,7 @@ export default function EditTruckPModel(props: any) {
                                 </div>
 
                                 <div className="flex gap-4 max-md:w-full">
-                                    <p className="max-w-32 md:w-32 w-full ">LP:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">LP:</p>
                                     <input type="number"
                                         defaultValue={items.m_lp}
                                         onChange={(e) => setLp(e.target.value)}
@@ -481,7 +481,7 @@ export default function EditTruckPModel(props: any) {
                                 </div>
 
                                 <div className="flex gap-4 max-md:w-full">
-                                    <p className="max-w-32 md:w-32 w-full ">IRP:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">IRP:</p>
                                     <input type="text"
                                         defaultValue={items.m_irp}
                                         onChange={(e) => setIrp(e.target.value)}
@@ -490,7 +490,7 @@ export default function EditTruckPModel(props: any) {
 
 
                                 <div className="flex gap-4 max-md:w-full">
-                                    <p className="max-w-32 md:w-32 w-full ">Code ราคา:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">Code ราคา:</p>
                                     <input type="text"
                                         defaultValue={items.m_codeprice}
                                         onChange={(e) => setCodeprice(e.target.value)}
@@ -498,7 +498,7 @@ export default function EditTruckPModel(props: any) {
                                 </div>
 
                                 <div className="flex gap-4 max-md:w-full">
-                                    <p className="max-w-32 md:w-32 w-full ">ราคาพิเศษ 1:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">ราคาพิเศษ 1:</p>
                                     <input type="text"
                                         defaultValue={items.m_s_price1}
                                         onChange={(e) => setS_Price1(e.target.value)}
@@ -506,7 +506,7 @@ export default function EditTruckPModel(props: any) {
                                 </div>
 
                                 <div className="flex gap-4 max-md:w-full">
-                                    <p className="max-w-32 md:w-32 w-full ">ราคาพิเศษ 2:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">ราคาพิเศษ 2:</p>
                                     <input type="text"
                                         defaultValue={items.m_s_price2}
                                         onChange={(e) => setS_Price2(e.target.value)}
@@ -514,7 +514,7 @@ export default function EditTruckPModel(props: any) {
                                 </div>
 
                                 <div className="flex gap-4 max-md:w-full">
-                                    <p className="max-w-32 md:w-32 w-full ">เงินสมทบ:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold ">เงินสมทบ:</p>
                                     <input type="text"
                                         defaultValue={items.m_contribution}
                                         onChange={(e) => setContribution(e.target.value)}
@@ -528,7 +528,7 @@ export default function EditTruckPModel(props: any) {
                                     role === "admin" ?
                                         <div>
                                             <div className="flex gap-4 max-md:w-full">
-                                                <p className="max-w-32 md:w-32 w-full ">ส่วนลดพิเศษ Hino:</p>
+                                                <p className="max-w-32 md:w-32 w-full font-bold">ส่วนลดพิเศษ Hino:</p>
                                                 <input type="text"
                                                     defaultValue={items.m_discount}
                                                     onChange={(e) => setDiscount(e.target.value)}
@@ -536,7 +536,7 @@ export default function EditTruckPModel(props: any) {
                                             </div>
 
                                             <div className="flex gap-4 max-md:w-full">
-                                                <p className="max-w-32 md:w-32 w-full ">ราคาทุน:</p>
+                                                <p className="max-w-32 md:w-32 w-full font-bold">ราคาทุน:</p>
                                                 <input type="text"
                                                     defaultValue={items.m_costprice}
                                                     onChange={(e) => setCostprice(e.target.value)}

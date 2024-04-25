@@ -11,7 +11,7 @@ export default function Database() {
         <div className="md:pt-8 md:pl-8 p-4 min-h-screen ">
             {/* text header */}
             <div className="text header">
-                <p className=" text-3xl font-bold">ฐานข้อมูล</p>
+                <p className=" text-2xl md:text-3xl font-bold">ฐานข้อมูล</p>
                 <p>ข้อมูลภายในระบบที่มีการเชื่อมโยงไปในส่วนต่างๆ</p>
             </div>
 
@@ -19,7 +19,7 @@ export default function Database() {
                 <div className="pt-4">
                     <div className=" bg-cyan-50  w-full p-8 shadow-md rounded-2xl flex flex-wrap gap-4 ">
                         <ul>
-                            <li className="md:max-w-[128px] flex flex-wrap justify-center text-black-p  ">
+                            <li className="max-w-[128px] flex flex-wrap justify-center text-black-p  ">
                                 <Link
                                     href="/employee"
                                     className={`bg-white w-20 h-20  p-4 mb-2  rounded-full  shadow-md`}
@@ -38,7 +38,7 @@ export default function Database() {
                 <div className="pt-4">
                     <div className=" bg-cyan-50  w-full p-8 shadow-md rounded-2xl flex flex-wrap gap-4 ">
                         <ul>
-                            <li className="md:max-w-[128px] flex flex-wrap justify-center text-black-p  ">
+                            <li className="max-w-[128px] flex flex-wrap justify-center text-black-p  ">
                                 <Link
                                     href="/database/trucktype"
                                     className={`bg-white w-20 h-20  p-4 mb-2  rounded-full  shadow-md `}
@@ -57,7 +57,7 @@ export default function Database() {
                 <div className="pt-4">
                     <div className=" bg-cyan-50  w-full p-8 shadow-md rounded-2xl flex flex-wrap gap-4 ">
                         <ul>
-                            <li className="md:max-w-[128px] flex flex-wrap justify-center text-black-p  ">
+                            <li className="max-w-[128px] flex flex-wrap justify-center text-black-p  ">
                                 <Link
                                     href="/database/garage"
                                     className={`bg-white w-20 h-20  p-4 mb-2  rounded-full  shadow-md `}
@@ -76,7 +76,7 @@ export default function Database() {
                 <div className="pt-4">
                     <div className=" bg-cyan-50  w-full p-8 shadow-md rounded-2xl flex flex-wrap gap-4 ">
                         <ul>
-                            <li className="md:max-w-[128px] flex flex-wrap justify-center text-black-p  ">
+                            <li className="max-w-[128px] flex flex-wrap justify-center text-black-p  ">
                                 <Link
                                     href="/database/equipment"
                                     className={`bg-white w-20 h-20  p-4 mb-2  rounded-full  shadow-md `}
@@ -95,7 +95,7 @@ export default function Database() {
                 <div className="pt-4">
                     <div className=" bg-cyan-50  w-full p-8 shadow-md rounded-2xl flex flex-wrap gap-4 ">
                         <ul>
-                            <li className="md:max-w-[128px] flex flex-wrap justify-center text-black-p  ">
+                            <li className="max-w-[128px] flex flex-wrap justify-center text-black-p  ">
                                 <Link
                                     href="/database/business"
                                     className={`bg-white w-20 h-20  p-4 mb-2  rounded-full  shadow-md `}

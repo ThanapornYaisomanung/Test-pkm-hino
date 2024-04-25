@@ -162,7 +162,7 @@ export default function TruckType() {
                 <div className='mb-6'>
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
-                <p className=" text-3xl font-bold">ประเภทรถ</p>
+                <p className="text-2xl md:text-3xl font-bold">ประเภทรถ</p>
             </div>
 
 

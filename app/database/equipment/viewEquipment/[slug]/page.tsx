@@ -113,21 +113,21 @@ export default function ViewGarage(props: any) {
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">รายละเอียดข้อมูลอุปกรณ์</p>
+                <p className="text-2xl md:text-3xl font-bold">รายละเอียดข้อมูลอุปกรณ์</p>
                 <p className="pt-2">รายละเอียดข้อมูลอุปกรณ์ภายในระบบฐานข้อมูล</p>
             </div>
             {/* tool ค้นหา */}
             <div className="pt-4 ">
                 <div className=" bg-cyan-50  w-full p-8 shadow-md rounded-2xl  ">
                     {/* inputdata */}
-                    <div className="flex justify-center gap-4">
+                    <div className="gap-4 space-y-4">
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่ออุปกรณ์:</p>
+                            <p className="max-w-32 md:w-32 w-full font-bold">ชื่ออุปกรณ์:</p>
                             <p>{items.et_name}</p>
 
                         </div>
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-36 w-full">ลักษณะ:</p>
+                            <p className="max-w-32 md:w-36 w-full font-bold">ลักษณะ:</p>
                             <div className="flex gap-4 max-md:w-full flex-col w-full">
                                 {items.et_option?.map((o: {
                                     eType: "",

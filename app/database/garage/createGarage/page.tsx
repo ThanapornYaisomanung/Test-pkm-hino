@@ -75,7 +75,7 @@ export default function CreateGarage() {
                     <button onClick={() => functionBack()}  className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">เพิ่มข้อมูลอู่ประกอบรถ</p>
+                <p className="text-2xl md:text-3xl font-bold">เพิ่มข้อมูลอู่ประกอบรถ</p>
                 <p className="pt-2">เพิ่มข้อมูลอู่ประกอบรถภายในระบบฐานข้อมูล</p>
 
 
@@ -88,7 +88,7 @@ export default function CreateGarage() {
                     {/* inputdata */}
                     <div className="flex flex-wrap justify-center gap-4">
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่ออู่รถ:</p>
+                            <p className="max-w-32 md:w-32 w-full  font-bold">ชื่ออู่รถ:</p>
                             <input type="text"
                                 value={garageName}
                                 onChange={(e) => setGarageName(e.target.value)}
@@ -98,7 +98,7 @@ export default function CreateGarage() {
                         </div>
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ที่อยู่:</p>
+                            <p className="max-w-32 md:w-32 w-full  font-bold">ที่อยู่:</p>
                             <input type="text"
                                 value={garageAddress}
                                 onChange={(e) => setGarageAddress(e.target.value)}
@@ -106,7 +106,7 @@ export default function CreateGarage() {
                         </div>
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">เบอร์โทรติดต่อ:</p>
+                            <p className="max-w-32 md:w-32 w-full  font-bold">เบอร์โทรติดต่อ:</p>
                             <input type='tel'
                                 value={garageTel}
                                 onChange={(e) => setGarageTel(e.target.value)}

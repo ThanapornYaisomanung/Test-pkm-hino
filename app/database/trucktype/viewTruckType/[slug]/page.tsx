@@ -115,23 +115,23 @@ export default function ViewTruckType(props: any) {
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">รายละเอียดข้อมูลประเภทรถ</p>
+                <p className="test-2xl md:text-3xl font-bold">รายละเอียดข้อมูลประเภทรถ</p>
                 <p className="pt-2">รายละเอียดข้อมูลประเภทรถภายในระบบฐานข้อมูล</p>
             </div>
             {/* tool ค้นหา */}
             <div className="pt-4 ">
                 <div className=" bg-cyan-50  w-full p-8 shadow-md rounded-2xl  ">
                     {/* inputdata */}
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่อประเภทรถ:</p>
+                    <div className="gap-4">
+                        <div className="flex gap-4 max-md:w-full ">
+                            <p className="max-w-24 md:w-32 w-full font-bold">ชื่อประเภทรถ:</p>
                             <p>{items.type_t_name}</p>
 
                         </div>
 
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่อ code:</p>
+                            <p className="max-w-24 md:w-32 w-full font-bold">ชื่อ code:</p>
                             <p>{items.type_t_code}</p>
                         </div>
 

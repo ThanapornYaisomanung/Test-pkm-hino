@@ -217,7 +217,7 @@ export default function CreateEmployee(props: any) {
                 <div className='mb-6'>
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
-                <p className=" text-3xl font-bold">เพิ่มข้อมูลพนักงาน</p>
+                <p className="text-2xl md:text-3xl font-bold">เพิ่มข้อมูลพนักงาน</p>
                 <p className="pt-2">เพิ่มข้อมูลพนักงานภายในระบบฐานข้อมูล</p>
             </div>
 
@@ -229,7 +229,7 @@ export default function CreateEmployee(props: any) {
                     <div className="flex flex-wrap gap-4">
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">คำนำหน้า:</p>
+                            <p className="max-w-32 md:w-32 w-full  font-bold">คำนำหน้า:</p>
 
                             <div className="relative md:w-[199.2px] w-full">
                                 <button
@@ -264,7 +264,7 @@ export default function CreateEmployee(props: any) {
                         </div>
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่อจริง:</p>
+                            <p className="max-w-32 md:w-32 w-full  font-bold">ชื่อจริง:</p>
                             <input type="text"
                                 defaultValue={items.employee_fname}
                                 onChange={(e) => setFname(e.target.value)}
@@ -274,7 +274,7 @@ export default function CreateEmployee(props: any) {
                         </div>
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">นามสกุล:</p>
+                            <p className="max-w-32 md:w-32 w-full  font-bold">นามสกุล:</p>
                             <input type="text"
                                 defaultValue={items.employee_lname}
 
@@ -283,7 +283,7 @@ export default function CreateEmployee(props: any) {
                         </div>
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">ชื่อเล่น:</p>
+                            <p className="max-w-32 md:w-32 w-full  font-bold">ชื่อเล่น:</p>
                             <input type="text"
                                 defaultValue={items.employee_nickname}
                                 onChange={(e) => setNickname(e.target.value)}
@@ -291,7 +291,7 @@ export default function CreateEmployee(props: any) {
                         </div>
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">Email:</p>
+                            <p className="max-w-32 md:w-32 w-full  font-bold">Email:</p>
                             <input type="text"
                                 defaultValue={items.employee_email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -300,7 +300,7 @@ export default function CreateEmployee(props: any) {
                         </div>
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">เบอร์โทร:</p>
+                            <p className="max-w-32 md:w-32 w-full  font-bold">เบอร์โทร:</p>
                             <input type="text"
                                 defaultValue={items.employee_tel}
                                 disabled
@@ -310,7 +310,7 @@ export default function CreateEmployee(props: any) {
 
 
                         <div className="flex gap-4 max-md:w-full">
-                            <p className="max-w-32 md:w-32 w-full ">สิทธิการเข้าถึง:</p>
+                            <p className="max-w-32 md:w-32 w-full font-bold ">สิทธิการเข้าถึง:</p>
 
                             <div className="relative md:w-[199.2px] w-full">
                                 <button

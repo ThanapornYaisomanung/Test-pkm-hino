@@ -229,7 +229,7 @@ export default function CreateTrucksTest() {
                     <div className='mb-6'>
                         <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                     </div>
-                    <p className=" text-3xl font-bold">เพิ่มข้อมูลรถ</p>
+                    <p className="text-2xl md:text-3xl font-bold">เพิ่มข้อมูลรถ</p>
                     <p className="pt-2">เพิ่มข้อมูลรถภายในระบบฐานข้อมูล</p>
                 </div>
 
@@ -242,7 +242,7 @@ export default function CreateTrucksTest() {
                         {/* inputdata */}
                         <div className="flex flex-wrap gap-4">
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">วันที่ตัดบัญชี:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">วันที่ตัดบัญชี:</p>
                                 <DatePicker
                                     selected={deductionDate}
                                     selectsStart
@@ -262,7 +262,7 @@ export default function CreateTrucksTest() {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">INV.:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">INV.:</p>
                                 <input type="text"
                                     value={invNum}
                                     onChange={(e) => setInvNum(e.target.value)}
@@ -272,7 +272,7 @@ export default function CreateTrucksTest() {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">ใบกำกับภาษีสินค้า:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ใบกำกับภาษีสินค้า:</p>
                                 <input type="text"
                                     value={productTax}
                                     onChange={(e) => setProductTax(e.target.value)}
@@ -283,7 +283,7 @@ export default function CreateTrucksTest() {
 
                             {/* seach to input value */}
                             <div className="flex gap-4 max-md:w-full" >
-                                <p className="max-w-32 md:w-32 w-full " onClick={(e) => setIsOpen(false)}>รุ่นรถ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold" onClick={(e) => setIsOpen(false)}>รุ่นรถ:</p>
                                 <div className='flex flex-col'>
                                     <input
                                         placeholder="Type to search..."
@@ -323,7 +323,7 @@ export default function CreateTrucksTest() {
 
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">แรงม้า:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">แรงม้า:</p>
 
 
 
@@ -336,7 +336,7 @@ export default function CreateTrucksTest() {
 
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">ความยาวรถ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ความยาวรถ:</p>
                                 <input type="text"
                                     value={input == "" ? "" : length}
                                     onChange={(e) => setLength(e.target.value)}
@@ -344,7 +344,7 @@ export default function CreateTrucksTest() {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">หมายเลขเครื่อง:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">หมายเลขเครื่อง:</p>
                                 <input type="text"
                                     value={serialNum}
                                     onChange={(e) => setSerialNum(e.target.value)}
@@ -354,7 +354,7 @@ export default function CreateTrucksTest() {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">หมายเลขคัสซี:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">หมายเลขคัสซี:</p>
                                 <input type="text"
                                     value={chassis}
                                     onChange={(e) => setChassis(e.target.value)}
@@ -363,7 +363,7 @@ export default function CreateTrucksTest() {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full" onClick={(e) => setIsOpen(false)}>
-                                <p className="max-w-32 md:w-32 w-full ">ที่จอดรถ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ที่จอดรถ:</p>
                                 <input type="text"
                                     value={parking}
                                     onChange={(e) => setParking(e.target.value)}
@@ -387,7 +387,7 @@ export default function CreateTrucksTest() {
                             {
                                 role === "admin" ? 
                                 <div className="flex gap-4 max-md:w-full">
-                                    <p className="max-w-32 md:w-32 w-full ">ราคาทุน:</p>
+                                    <p className="max-w-32 md:w-32 w-full font-bold">ราคาทุน:</p>
                                     <input type="number"
                                         value={input == "" ? "" : costprice}
 
@@ -399,7 +399,7 @@ export default function CreateTrucksTest() {
 
 
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">LP:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">LP:</p>
                                 <input type="number"
                                     value={input == "" ? "" : lp}
                                     onChange={(e) => setLp(e.target.value)}
@@ -407,7 +407,7 @@ export default function CreateTrucksTest() {
                             </div>
 
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">IRP:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">IRP:</p>
                                 <input type="text"
 
                                     value={input == "" ? "" : irp}
@@ -417,7 +417,7 @@ export default function CreateTrucksTest() {
 
 
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">Code ราคา:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">Code ราคา:</p>
                                 <input type="text"
                                     value={input == "" ? "" : codeprice}
 

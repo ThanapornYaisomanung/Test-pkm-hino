@@ -102,7 +102,7 @@ console.log(etOption);
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">เพิ่มข้อมูลอุปกรณ์ประกอบรถ</p>
+                <p className="text-2xl md:text-3xl font-bold">เพิ่มข้อมูลอุปกรณ์ประกอบรถ</p>
                 <p className="pt-2">เพิ่มข้อมูลอุปกรณ์ประกอบรถภายในระบบฐานข้อมูล</p>
 
 
@@ -116,7 +116,7 @@ console.log(etOption);
                     <div className="flex flex-col flex-wrap  gap-4">
                         <div>
                             <div className="flex gap-4 max-md:w-full">
-                                <p className="max-w-32 md:w-32 w-full ">ชื่ออุปกรณ์:</p>
+                                <p className="max-w-32 md:w-32 w-full  font-bold">ชื่ออุปกรณ์:</p>
                                 <input type="text"
                                     value={etName}
                                     onChange={(e) => setEtName(e.target.value)}
@@ -129,7 +129,7 @@ console.log(etOption);
                         <div className="flex flex-col gap-4">
                             <div className='flex md:gap-4 max-md:w-full'>
                                 <div className='flex gap-4 max-md:w-full'>
-                                    <p className="max-w-32 md:w-32 w-full ">เพิ่มลักษณะ:</p>
+                                    <p className="max-w-32 md:w-32 w-full  font-bold">เพิ่มลักษณะ:</p>
                                     <input
                                         type="text"
                                         placeholder="Task..."
@@ -142,7 +142,7 @@ console.log(etOption);
 
                                 <button className='bg-green-500 hover:bg-green-600 px-5 rounded text-white' onClick={addTask}>เพิ่ม</button>
                             </div>
-                            <p className="max-w-32 md:w-32 w-full ">ลักษณะอุปกรณ์:</p>
+                            <p className="max-w-32 md:w-32 w-full  font-bold">ลักษณะอุปกรณ์:</p>
                             <div className='flex flex-col gap-4 w-full '>
 
                                 {etOption.map((task: ITask, key: number) =>

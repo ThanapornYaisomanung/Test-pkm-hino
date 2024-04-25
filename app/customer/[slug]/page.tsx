@@ -134,7 +134,7 @@ export default function ViewCustomer(props: any) {
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
 
-                <p className=" text-3xl font-bold">รายละเอียดข้อมูลประเภทรถ</p>
+                <p className="text-2xl md:text-3xl font-bold">รายละเอียดข้อมูลประเภทรถ</p>
                 <p className="pt-2">รายละเอียดข้อมูลประเภทรถภายในระบบฐานข้อมูล</p>
             </div>
 
@@ -158,52 +158,52 @@ export default function ViewCustomer(props: any) {
                     <div className='flex flex-wrap gap-4 col-span-2'>
                         <div className='lg:grid lg:grid-cols-2 gap-4 w-full'>
                             <div className="flex gap-4 ">
-                                <p className="max-w-32 md:w-32 w-full h-full ">ชื่อ-นามสกุลผู้จอง:</p>
+                                <p className="max-w-32 md:w-32 w-full h-full font-bold">ชื่อ-นามสกุลผู้จอง:</p>
                                 <p className=' text-wrap'>{items.b_cusName}</p>
                             </div>
 
                             <div className="flex gap-4">
-                                <p className="max-w-32 md:w-32 w-full ">เบอร์โทรติดต่อ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">เบอร์โทรติดต่อ:</p>
                                 <p className=' text-wrap'>{items.b_cusTel}</p>
                             </div>
                             <div className="flex gap-4">
-                                <p className="max-w-32 md:w-32 w-full ">ประเภทธุรกิจ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ประเภทธุรกิจ:</p>
                                 <p className=' text-wrap'>{items.b_businessType}</p>
                             </div>
                             <div className="flex gap-4">
-                                <p className="max-w-32 md:w-32 w-full ">วันที่จองรถ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">วันที่จองรถ:</p>
                                 <p className=' text-wrap'>{items.b_dateBooking == "" || items.b_dateBooking == null ? "-" : items.b_dateBooking}</p>
                             </div>
                             <div className="flex gap-4">
-                                <p className="max-w-32 md:w-32 w-full ">ใบกำกับภาษีขาย:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ใบกำกับภาษีขาย:</p>
                                 <p className=' text-wrap'>{items.b_salesTax == "" ? "-" : items.b_salesTax}</p>
                             </div>
                             <div className="flex gap-4">
-                                <p className="max-w-32 md:w-32 w-full ">รุ่นรถ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">รุ่นรถ:</p>
                                 <p >{items.b_Mname}</p>
                             </div>
                             <div className="flex gap-4">
-                                <p className="max-w-32 md:w-32 w-full ">อู่แต่งรถ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">อู่แต่งรถ:</p>
                                 <p>{items.b_garage == "" ? "-" : items.b_garage}</p>
                             </div>
                             <div className="flex gap-4">
-                                <p className="max-w-32 md:w-32 w-full ">อุปกรณ์แต่งรถ:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">อุปกรณ์แต่งรถ:</p>
                                 <p>{items.b_equipment == "" ? "-" : items.b_equipment}</p>
                             </div>
                             <div className="flex gap-4">
-                                <p className="max-w-32 md:w-32 w-full ">ราคาขายจริง:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ราคาขายจริง:</p>
                                 <p>{items.b_realPrice == "" ? "-" : items.b_realPrice}</p>
                             </div>
                             <div className="flex gap-4">
-                                <p className="max-w-32 md:w-32 w-full ">เปอร์เซ็นต์:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">เปอร์เซ็นต์:</p>
                                 <p>{items.b_percent == "" ? "-" : items.b_percent}</p>
                             </div>
                             <div className="flex gap-4">
-                                <p className="max-w-32 md:w-32 w-full ">เงินดาวน์:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">เงินดาวน์:</p>
                                 <p>{items.b_downPay == "" ? "-" : items.b_downPay}</p>
                             </div>
                             <div className="flex gap-4">
-                                <p className="max-w-32 md:w-32 w-full ">ไฟแนนซ์:</p>
+                                <p className="max-w-32 md:w-32 w-full font-bold">ไฟแนนซ์:</p>
                                 <p>{items.b_finance == "" ? "-" : items.b_finance}</p>
                             </div>
 

@@ -158,7 +158,7 @@ export default function Business() {
                 <div className='mb-6'>
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
-                <p className=" text-3xl font-bold">ข้อมูลประเภทธุรกิจ</p>
+                <p className="text-2xl md:text-3xl font-bold">ข้อมูลประเภทธุรกิจ</p>
             </div>
 
             {/* tool ค้นหา */}

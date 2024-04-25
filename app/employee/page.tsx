@@ -148,7 +148,7 @@ export default function Employee() {
                 <div className='mb-6'>
                     <button onClick={() => functionBack()} className='flex text-sm  items-center' > <Arrow_left_icon />ย้อนกลับ</button>
                 </div>
-                <p className=" text-3xl font-bold">ข้อมูลพนักงาน</p>
+                <p className="text-2xl md:text-3xl font-bold">ข้อมูลพนักงาน</p>
 
             </div>
 
@@ -157,7 +157,7 @@ export default function Employee() {
             <div className="pt-4">
                 <div className=" bg-cyan-50 items-center w-full p-4 md:p-8 shadow-md rounded-2xl flex flex-wrap gap-4 ">
                     <div className="flex gap-4 max-md:w-full">
-                        <p className="max-w-20 md:max-w-32 w-full max-md:text-sm">ค้นหารุ่นรถ:</p>
+                        <p className="max-w-20 md:max-w-32 w-full max-md:text-sm">ค้นหาชื่อ:</p>
                         <input
                             placeholder="Type to search..."
                             value={input}
@@ -193,10 +193,10 @@ export default function Employee() {
                     <thead >
                         <tr >
 
-                            <th className="">ชื่อรุ่น</th>
-                            <th className=" max-md:hidden">ประเภทรถ</th>
-                            <th className="max-md:hidden">ความยาว</th>
-                            <th className="max-md:hidden">แรงม้า</th>
+                            <th className="">ชื่อ-นามสกุล</th>
+                            <th className=" max-md:hidden">ชื่อเล่น</th>
+                            <th className="max-md:hidden">เบอร์โทรติดต่อ</th>
+                            <th className="max-md:hidden">อีเมล</th>
                             <th className="">Action</th>
                         </tr>
                     </thead>

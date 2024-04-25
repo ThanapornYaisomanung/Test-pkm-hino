@@ -94,7 +94,7 @@ export default function Dashboard() {
         <div className="md:pt-8 md:pl-8 p-4 min-h-screen w-full ">
             {/* text header */}
             <div className="text header">
-                <p className=" text-3xl font-bold">Dashboard</p>
+                <p className="text-2xl md:text-3xl font-bold">Dashboard</p>
                 {/* date time */}
                 <div className="flex gap-4">
                     <p>Datetimes:</p>
