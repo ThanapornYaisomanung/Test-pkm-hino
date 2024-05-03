@@ -117,7 +117,7 @@ export default function CreateBooking(props: any) {
     };
     const [input, setInput] = useState("");
 
-    const getData = async (DataID: string) => {
+    const getData = async () => {
         const db = getFirestore()
         const docRef = doc(db, "Truck", DataID);
         const docSnap = await getDoc(docRef);
@@ -239,9 +239,9 @@ export default function CreateBooking(props: any) {
         const subTypeB = getTypeB();
         const subGarage = getGarage();
         const subEm = getEM();
+        getData();
         return () => {
             unsubscribe();
-            getData(DataID);
             subTypeB();
             unsub();
             sub();
