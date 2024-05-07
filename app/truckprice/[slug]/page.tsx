@@ -268,83 +268,86 @@ export default function TruckPModel(props: any) {
 
 
 
-            <div className='py-4'>
-                <div className='pb-6 text-center'>
+            {role === "admin" ?
+                <div className='py-4'>
+                    <div className='pb-6 text-center'>
 
-                    <p className='text-2xl font-bold text-bluesky-p'>ประวัติการซื้อ-ขาย</p>
-                    <p className='pt-2'>สามารถตรวจสอบประวัติของราคารถที่มีการขายออกไป</p>
+                        <p className='text-2xl font-bold text-bluesky-p'>ประวัติการซื้อ-ขาย</p>
+                        <p className='pt-2'>สามารถตรวจสอบประวัติของราคารถที่มีการขายออกไป</p>
 
-                </div>
+                    </div>
 
-                <div className=" bg-cyan-50  w-full md:p-6 p-4 shadow-md rounded-2xl">
-                    <div className="flex flex-wrap items-center max-md:flex-col col-span-2 justify-center ">
+                    <div className=" bg-cyan-50  w-full md:p-6 p-4 shadow-md rounded-2xl">
+                        <div className="flex flex-wrap items-center max-md:flex-col col-span-2 justify-center ">
 
-                        <table className="table-fixed  max-w-[1680px] w-full divide-y">
-                            <thead >
-                                <tr >
-                                    <th className="">วันที่จอง-ซื้อ</th>
-                                    <th className=" max-md:hidden">ชื่อ-นามสกุล</th>
-                                    <th className="max-sm:hidden">ชื่อรุ่นรถ</th>
-                                    <th className="max-sm:hidden">ใบกำกับภาษีขาย</th>
-                                    <th className="max-sm:hidden">ประวัติราคา</th>
-                                    {/* <th className="">Action</th> */}
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y">
-                                {
-                                    items2.length != 0 ?
-                                        currentPosts?.map((u: {
-                                            b_dateBooking: "",
-                                            b_cusName: "",
-                                            b_Mname: "",
-                                            b_realPrice: "",
-                                            id: "",
-                                        }) => (
-                                            <tr key={u.id} className=" py-2">
-                                                <td className="max-md:text-sm py-2">{u.b_dateBooking}</td>
-                                                <td className="text-center max-md:hidden max-md:text-sm">{u.b_cusName}</td>
-                                                <td className="text-center  max-sm:hidden max-md:text-sm">{u.b_Mname}</td>
-                                                <td className="text-center  max-sm:hidden max-md:text-sm">{u.b_Mname}</td>
-                                                <td className="text-center  max-sm:hidden max-md:text-sm">{u.b_realPrice}</td>
-                                                {/*   <td className="text-center  max-sm:hidden max-md:text-sm">{u.id}</td>
+                            <table className="table-fixed  max-w-[1680px] w-full divide-y">
+                                <thead >
+                                    <tr >
+                                        <th className="">วันที่จอง-ซื้อ</th>
+                                        <th className=" max-md:hidden">ชื่อ-นามสกุล</th>
+                                        <th className="max-sm:hidden">ชื่อรุ่นรถ</th>
+                                        <th className="max-sm:hidden">ใบกำกับภาษีขาย</th>
+                                        <th className="max-sm:hidden">ประวัติราคา</th>
+                                        {/* <th className="">Action</th> */}
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y">
+                                    {
+                                        items2.length != 0 ?
+                                            currentPosts?.map((u: {
+                                                b_dateBooking: "",
+                                                b_cusName: "",
+                                                b_Mname: "",
+                                                b_realPrice: "",
+                                                id: "",
+                                            }) => (
+                                                <tr key={u.id} className=" py-2">
+                                                    <td className="max-md:text-sm py-2">{u.b_dateBooking}</td>
+                                                    <td className="text-center max-md:hidden max-md:text-sm">{u.b_cusName}</td>
+                                                    <td className="text-center  max-sm:hidden max-md:text-sm">{u.b_Mname}</td>
+                                                    <td className="text-center  max-sm:hidden max-md:text-sm">{u.b_Mname}</td>
+                                                    <td className="text-center  max-sm:hidden max-md:text-sm">{u.b_realPrice}</td>
+                                                    {/*   <td className="text-center  max-sm:hidden max-md:text-sm">{u.id}</td>
                                              <td className="flex lg:gap-6 max-lg:space-x-4 justify-center my-2" >
                                                     <button className="flex justify-between rounded-md text-center text-white bg-sky-600 hover:bg-sky-700 p-2 max-w-20 w-full text-sm" onClick={() => dbView(u.id)} ><View_icon color="#fff" /> ดู</button>
 
                                                 </td> */}
 
+                                                </tr>
+
+                                            ))
+                                            :
+                                            <tr className=" ">
+                                                <td className="text-center max-md:hidden max-md:text-sm"></td>
+                                                <td className="text-center max-md:hidden max-md:text-sm"></td>
+                                                <td className="text-center max-md:hidden max-md:text-sm py-4">ไม่พบข้อมูล</td>
+                                                <td className="text-center max-md:hidden max-md:text-sm"></td>
+                                                <td className="text-center max-md:hidden max-md:text-sm"></td>
                                             </tr>
 
-                                        ))
-                                        :
-                                        <tr className=" ">
-                                            <td className="text-center max-md:hidden max-md:text-sm"></td>
-                                            <td className="text-center max-md:hidden max-md:text-sm"></td>
-                                            <td className="text-center max-md:hidden max-md:text-sm py-4">ไม่พบข้อมูล</td>
-                                            <td className="text-center max-md:hidden max-md:text-sm"></td>
-                                            <td className="text-center max-md:hidden max-md:text-sm"></td>
-                                        </tr>
-
-                                }
+                                    }
 
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
 
-                        <div className="mt-5 w-full">
-                            <Pagination2
-                                items={items2.length == 0 ? 1 : items2.length} // 100
-                                currentPage={currentPage} // 1
-                                pageSize={pageSize} // 10
-                                onPageChange={onPageChange}
-                                onPageChange2={onPageChange}
-                            />
+                            <div className="mt-5 w-full">
+                                <Pagination2
+                                    items={items2.length == 0 ? 1 : items2.length} // 100
+                                    currentPage={currentPage} // 1
+                                    pageSize={pageSize} // 10
+                                    onPageChange={onPageChange}
+                                    onPageChange2={onPageChange}
+                                />
 
+                            </div>
                         </div>
+
                     </div>
 
                 </div>
+                : ""}
 
-            </div>
 
 
 
