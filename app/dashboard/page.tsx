@@ -2,7 +2,7 @@
 
 import { Clock } from "../components/Clock"
 import { DashBox } from "../components/DashBox"
-import { Booking_icon, Inbox_icon, Comp_icon } from "../icons/boxs"
+import { Booking_icon, Inbox_icon, Comp_icon, Truck_icon, Wait_icon } from "../icons/boxs"
 import { TopMTruck } from "../components/TopMTruck";
 import { TopEM } from "../components/TopEM";
 import { useRouter } from "next/navigation";
@@ -107,11 +107,15 @@ export default function Dashboard() {
 
             <div className="flex flex-wrap md:gap-8 gap-4 pt-4">
                 <div>
-                    <DashBox icon={<Inbox_icon />} text={"จำนวนในคลังสินค้า"} num={Math.floor(items.length).toLocaleString("en-US")} />
+                    <DashBox icon={<Truck_icon />} text={"จำนวนรถในคลัง"} num={Math.floor(items.length).toLocaleString("en-US")} />
                 </div>
                 <div>
                     <DashBox icon={<Booking_icon height="56px" width="56px" />} text={"จำนวนในการจอง"} num={Math.floor(items2.length).toLocaleString("en-US")} />
                 </div>
+                <div>
+                    <DashBox icon={<Wait_icon />} text={"รอดำเนินการ"} num={Math.floor(items3.length).toLocaleString("en-US")}/>
+                </div>
+               
                 <div>
                     <DashBox icon={<Comp_icon />} text={"จำนวนที่สำเร็จ"} num={Math.floor(items3.length).toLocaleString("en-US")}/>
                 </div>

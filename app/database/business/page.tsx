@@ -165,7 +165,7 @@ export default function Business() {
             <div className="pt-4">
                 <div className=" bg-cyan-50 items-center w-full p-4 md:p-8 shadow-md rounded-2xl flex flex-wrap gap-4 ">
                     <div className="flex gap-4 max-md:w-full">
-                        <p className="max-w-20 md:max-w-32 w-full max-md:text-sm">ค้นหารุ่นรถ:</p>
+                        <p className="max-w-24 md:max-w-32 w-full max-md:text-sm">ค้นหาประเภทธุรกิจ:</p>
                         <input
                             placeholder="Type to search..."
                             value={input}
@@ -201,7 +201,7 @@ export default function Business() {
                     <thead >
                         <tr >
 
-                            <th className="">ชื่ออุปกรณ์</th>
+                            <th className="">ชื่อประเภทธุรกิจ</th>
                             <th className="">Action</th>
                         </tr>
                     </thead>

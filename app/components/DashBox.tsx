@@ -1,6 +1,6 @@
 export function DashBox(prop: any) {
     return (
-        <div className="max-w-full md:w-80  md:h-40 bg-cyan-50 rounded-2xl shadow-md flex items-center p-4 justify-center gap-8">
+        <div className="max-w-80 md:h-40 bg-cyan-50 rounded-2xl shadow-md flex items-center p-4 justify-center md:gap-8 gap-4">
             {/* icon */}
             <div className="w-14 h-14">
                 {prop.icon}
