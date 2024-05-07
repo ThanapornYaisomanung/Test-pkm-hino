@@ -34,8 +34,8 @@ const TimeM = [
     { id: 10, label: "120 เดือน", value: 120 },
 ]
 
-export function CalPayment() {
-    const [priceT, setPriceT] = useState(0);
+export function CalPayment(prop: any) {
+    const [priceT, setPriceT] = useState(prop.Lp);
     const [priceEM, setPriceEM] = useState(0);
     const [vat, setVat] = useState(0);
     const [totalVat, setTotalVat] = useState<number>(0);
@@ -63,7 +63,6 @@ export function CalPayment() {
     }
 
 
- console.log(loan);
     return (
         <div className=" bg-cyan-50  w-full md:p-6 p-4 shadow-md rounded-2xl">
 
@@ -79,7 +78,8 @@ export function CalPayment() {
                                 type="number"
                                 className="pl-1 ring-1 ring-inset ring-gray-300 max-md:w-full"
                                 placeholder="ราคารถ"
-                                onChange={(e) => AddComma(e.target.value)}
+                                onChange={(e) => sumPrice(e.target.value)}
+                                // onChange={(e) => AddComma(e.target.value)}
                             ></input>
                         </div>
 
@@ -100,7 +100,7 @@ export function CalPayment() {
                         <div>
                             <p className=" pb-1">ราคาสุทธิรวม</p>
                             <input
-                                value={totalVat}
+                                value={priceEM == 0 ? priceT : totalVat}
                                 type="number"
                                 className="pl-1 ring-1 ring-inset ring-gray-300 w-full"
                                 placeholder="ราคารถ"

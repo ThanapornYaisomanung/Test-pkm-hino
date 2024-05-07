@@ -1,23 +1,27 @@
 "use client";
 
 import { useRouter } from 'next/navigation'
-import { useState, useEffect } from "react";
-import { collection, doc, getDoc, getFirestore, deleteDoc, query, where, getDocs } from "firebase/firestore";
+import { useState, useEffect, SetStateAction } from "react";
+import { collection, doc, getDoc, getFirestore, deleteDoc, query, where, getDocs, onSnapshot } from "firebase/firestore";
 import { db } from "@/app/firebase";
 import Loading from '@/app/components/Loading';
-import { Arrow_left_icon, Delete_icon, Edit_icon } from '@/app/icons/activeIcon';
+import { Arrow_left_icon, Delete_icon, Edit_icon, View_icon } from '@/app/icons/activeIcon';
 import { ShowTruck } from '@/app/components/ShowTruck';
 import { CalPayment } from '@/app/components/CalPayment';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import Pagination2 from '@/app/components/Pagination2';
 
 let data = collection(db, "TruckModel")
+let data2 = collection(db, "Booking")
 
 
 export default function TruckPModel(props: any) {
     const DataID = props.params.slug;
     const [items, setItems] = useState<any>([]);
+    const [items2, setItems2] = useState<ArrayType>([]);
     const router = useRouter()
     const [role, setRole] = useState("");
+    const [nameM, setNameM] = useState("");
     const auth = getAuth();
     onAuthStateChanged(auth, async (user) => {
         if (user) {
@@ -51,8 +55,27 @@ export default function TruckPModel(props: any) {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
             const product = { id: docSnap.id, ...docSnap.data() };
+            const product2 = { id: docSnap.id, name: docSnap.data().m_name, ...docSnap.data() };
             setItems(product);
-            return product;
+            // setNameM(product2.name)
+
+            const q = query(data2, where("b_Mname", "==", product2.name));
+            const unsubscribe = onSnapshot(q, (querySnapshot) => {
+                const cities: any[] = [];
+                querySnapshot.docs.map((doc) => {
+                    cities.push(doc.data());
+                });
+                setItems2(cities);
+
+            });
+
+            return () => {
+                product;
+                unsubscribe();
+            };
+
+
+            // return 
         } else {
 
             console.log("No such document!");
@@ -60,17 +83,43 @@ export default function TruckPModel(props: any) {
 
     }
 
+
+    //Pagination2
+    const [currentPage, setCurrentPage] = useState(1);
+    const pageSize = 10;
+
+
+    const onPageChange = (page: SetStateAction<number>) => {
+        setCurrentPage(page);
+    };
+
+    const lastPostIndex = currentPage * pageSize;
+    const firstPostIndex = lastPostIndex - pageSize;
+    const currentPosts = items2.slice(firstPostIndex, lastPostIndex);
+
+
     useEffect(() => {
         getData();
+        // const unsubscribe3 = loadRealtime3();
 
+        return () => {
+            // unsubscribe3();
+        };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+
 
     // ปุ่ม
     // แก้ไขข้อมูล
     const dbEdit = async (id: string) => {
         console.log(id);
         router.push(`/truckprice/editTruck/${id}`)
+    }
+
+    const dbView = async (id: string) => {
+        router.push(`/customer/${id}`)
+
     }
 
     // ลบข้อมูล
@@ -181,6 +230,8 @@ export default function TruckPModel(props: any) {
 
 
                                 <ShowTruck key={items.id} id={items.id} truckname={items.m_name} DataID={DataID} />
+
+
                             </div>
                         </div>
 
@@ -201,15 +252,12 @@ export default function TruckPModel(props: any) {
 
                 {/* inputdata */}
                 <div className='pt-4'>
-                    <CalPayment />
+                    <CalPayment Lp={items.m_lp} />
                 </div>
-
-
-
 
             </div>
 
-            {/* ปุ่ม */}
+            {/* ปุ่ม*/}
             {role === "admin" ?
                 <div className="flex flex-wrap gap-8 py-5 justify-center ">
                     <button className="flex justify-between rounded-md text-center text-white bg-amber-500 hover:bg-amber-600 p-2 max-w-20 w-full text-sm" onClick={() => dbEdit(DataID)}  ><Edit_icon color="#fff" /> แก้ไข</button>
@@ -219,6 +267,84 @@ export default function TruckPModel(props: any) {
                 : ""}
 
 
+
+            <div className='py-4'>
+                <div className='pb-6 text-center'>
+
+                    <p className='text-2xl font-bold text-bluesky-p'>ประวัติการซื้อ-ขาย</p>
+                    <p className='pt-2'>สามารถตรวจสอบประวัติของราคารถที่มีการขายออกไป</p>
+
+                </div>
+
+                <div className=" bg-cyan-50  w-full md:p-6 p-4 shadow-md rounded-2xl">
+                    <div className="flex flex-wrap items-center max-md:flex-col col-span-2 justify-center ">
+
+                        <table className="table-fixed  max-w-[1680px] w-full divide-y">
+                            <thead >
+                                <tr >
+                                    <th className="">วันที่จอง-ซื้อ</th>
+                                    <th className=" max-md:hidden">ชื่อ-นามสกุล</th>
+                                    <th className="max-sm:hidden">ชื่อรุ่นรถ</th>
+                                    <th className="max-sm:hidden">ใบกำกับภาษีขาย</th>
+                                    <th className="max-sm:hidden">ประวัติราคา</th>
+                                    {/* <th className="">Action</th> */}
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y">
+                                {
+                                    items2.length != 0 ?
+                                        currentPosts?.map((u: {
+                                            b_dateBooking: "",
+                                            b_cusName: "",
+                                            b_Mname: "",
+                                            b_realPrice: "",
+                                            id: "",
+                                        }) => (
+                                            <tr key={u.id} className=" py-2">
+                                                <td className="max-md:text-sm py-2">{u.b_dateBooking}</td>
+                                                <td className="text-center max-md:hidden max-md:text-sm">{u.b_cusName}</td>
+                                                <td className="text-center  max-sm:hidden max-md:text-sm">{u.b_Mname}</td>
+                                                <td className="text-center  max-sm:hidden max-md:text-sm">{u.b_Mname}</td>
+                                                <td className="text-center  max-sm:hidden max-md:text-sm">{u.b_realPrice}</td>
+                                                {/*   <td className="text-center  max-sm:hidden max-md:text-sm">{u.id}</td>
+                                             <td className="flex lg:gap-6 max-lg:space-x-4 justify-center my-2" >
+                                                    <button className="flex justify-between rounded-md text-center text-white bg-sky-600 hover:bg-sky-700 p-2 max-w-20 w-full text-sm" onClick={() => dbView(u.id)} ><View_icon color="#fff" /> ดู</button>
+
+                                                </td> */}
+
+                                            </tr>
+
+                                        ))
+                                        :
+                                        <tr className=" ">
+                                            <td className="text-center max-md:hidden max-md:text-sm"></td>
+                                            <td className="text-center max-md:hidden max-md:text-sm"></td>
+                                            <td className="text-center max-md:hidden max-md:text-sm py-4">ไม่พบข้อมูล</td>
+                                            <td className="text-center max-md:hidden max-md:text-sm"></td>
+                                            <td className="text-center max-md:hidden max-md:text-sm"></td>
+                                        </tr>
+
+                                }
+
+
+                            </tbody>
+                        </table>
+
+                        <div className="mt-5 w-full">
+                            <Pagination2
+                                items={items2.length == 0 ? 1 : items2.length} // 100
+                                currentPage={currentPage} // 1
+                                pageSize={pageSize} // 10
+                                onPageChange={onPageChange}
+                                onPageChange2={onPageChange}
+                            />
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
 
 
 
