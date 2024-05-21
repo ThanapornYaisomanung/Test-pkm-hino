@@ -18,6 +18,7 @@ export default function Dashboard() {
     const [items, setItems] = useState<any>([]);
     const [items2, setItems2] = useState<any>([]);
     const [items3, setItems3] = useState<any>([]);
+    const [items4, setItems4] = useState<any>([]);
     const router = useRouter()
 
     const loadRealtime = () => {
@@ -65,15 +66,32 @@ export default function Dashboard() {
             unsubscribe();
         };
     };
+    const loadRealtime4 = () => {
+        const q = query(data, where("t_status", "==", "ดำเนินการ"));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+            const cities: any[] = [];
+            querySnapshot.docs.map((doc) => {
+                cities.push(doc.data());
+            });
+            setItems4(cities);
+           
+        });
+
+        return () => {
+            unsubscribe();
+        };
+    };
 
     useEffect(() => {
         const unsubscribe = loadRealtime();
         const unsubscribe2 = loadRealtime2();
         const unsubscribe3 = loadRealtime3();
+        const unsubscribe4 = loadRealtime4();
         return () => {
             unsubscribe();
             unsubscribe2();
             unsubscribe3();
+            unsubscribe4();
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -113,7 +131,7 @@ export default function Dashboard() {
                     <DashBox icon={<Booking_icon height="56px" width="56px" />} text={"จำนวนในการจอง"} num={Math.floor(items2.length).toLocaleString("en-US")} />
                 </div>
                 <div>
-                    <DashBox icon={<Wait_icon />} text={"รอดำเนินการ"} num={Math.floor(items3.length).toLocaleString("en-US")}/>
+                    <DashBox icon={<Wait_icon />} text={"รอดำเนินการ"} num={Math.floor(items4.length).toLocaleString("en-US")}/>
                 </div>
                
                 <div>
